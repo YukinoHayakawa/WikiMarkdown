@@ -1,6 +1,8 @@
 <?php
 
-class ResourceLoaderWikiMarkdownVisualEditorModule extends ResourceLoaderFileModule {
+use MediaWiki\ResourceLoader as RL;
+
+class ResourceLoaderWikiMarkdownVisualEditorModule extends RL\FileModule {
 
 	protected $targets = [ 'desktop', 'mobile' ];
 
@@ -8,7 +10,7 @@ class ResourceLoaderWikiMarkdownVisualEditorModule extends ResourceLoaderFileMod
 	 * @param ResourceLoaderContext $context
 	 * @return string JavaScript code
 	 */
-	public function getScript( ResourceLoaderContext $context ) {
+	public function getScript( RL\Context $context ) {
 		$scripts = parent::getScript( $context );
 
 		return $scripts;
